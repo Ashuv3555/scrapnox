@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "in.scrapnox.app"
+    namespace = "com.scrapnox.app"
     compileSdk = 35
 
     defaultConfig {

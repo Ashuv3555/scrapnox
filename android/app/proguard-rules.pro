@@ -1,2 +1,2 @@
 # ScrapNox app — keep default Android optimizations
--keep class in.scrapnox.app.** { *; }
+-keep class com.scrapnox.app.** { *; }
