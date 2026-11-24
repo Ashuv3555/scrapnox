@@ -1,0 +1,9 @@
+{
+  "name": "scrapnox.in",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ScrapNox — vehicle scrapping landing page (static) and Android app source",
+  "scripts": {
+    "start": "npx --yes serve ."
+  }
+}
