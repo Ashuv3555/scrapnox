@@ -1,0 +1,7 @@
+# AI generation artifacts
+vibe_images/
+
+# OS / editor
+Thumbs.db
+.DS_Store
+*.log

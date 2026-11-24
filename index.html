@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ScrapNox — Scrap Your Old Vehicle, Get Instant Payment | 100% Legal Vehicle Scrapping</title>
+<meta name="description" content="ScrapNox makes vehicle scrapping easy. Free doorstep pickup for cars, bikes, trucks & 3-wheelers, same-day payment, and 100% legal CoD/CVS certificates from RVSF-registered facilities." />
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+<meta property="og:title" content="ScrapNox — Scrap Your Old Vehicle, Get Instant Payment" />
+<meta property="og:description" content="Free pickup, same-day payment, 100% legal scrapping with CoD & CVS certificates." />
+<meta property="og:type" content="website" />
+
+<!-- ============================================================
+     CONTACT CONFIG — apne real details yahan daal do (ek hi jagah)
+     ============================================================ -->
+<script>
+  window.SCRAPNOX_CONFIG = {
+    phone: "+91 98765 43210",          // TODO: real phone number daalo
+    phoneHref: "tel:+919876543210",
+    whatsapp: "https://wa.me/919876543210", // TODO: real WhatsApp number
+    email: "hello@scrapnox.in",        // TODO: real email
+    address: "Sector 80, Noida, Uttar Pradesh 201305", // TODO: real office address
+    hours: "Mon–Sat, 9:00 AM – 6:00 PM"
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --green: #16733e;
+    --green-dark: #0e5a2e;
+    --green-deep: #0a4423;
+    --green-tint: #e9f5ee;
+    --green-tint-2: #d4ecdd;
+    --navy: #0b1f8f;
+    --navy-dark: #081a75;
+    --amber: #f5a623;
+    --amber-dark: #d98e0f;
+    --ink: #10241a;
+    --muted: #4d5f56;
+    --line: #e3ece6;
+    --card: #ffffff;
+    --radius: 18px;
+    --shadow-sm: 0 2px 10px rgba(16, 36, 26, .06);
+    --shadow-md: 0 10px 30px rgba(16, 36, 26, .10);
+    --shadow-lg: 0 24px 60px rgba(16, 36, 26, .16);
+    --font: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    color: var(--ink);
+    background: #fff;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+
+  .container { width: min(1180px, 92%); margin-inline: auto; }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    font-weight: 700; font-size: 15.5px; font-family: var(--font);
+    padding: 14px 28px; border-radius: 12px; border: 2px solid transparent;
+    cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+    white-space: nowrap;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-green { background: var(--green); color: #fff; box-shadow: 0 8px 20px rgba(22,115,62,.28); }
+  .btn-green:hover { background: var(--green-dark); transform: translateY(-2px); box-shadow: 0 12px 26px rgba(22,115,62,.34); }
+  .btn-amber { background: var(--amber); color: #3a2603; box-shadow: 0 8px 20px rgba(245,166,35,.30); }
+  .btn-amber:hover { background: var(--amber-dark); color: #fff; transform: translateY(-2px); }
+  .btn-outline { border-color: var(--green); color: var(--green); background: #fff; }
+  .btn-outline:hover { background: var(--green-tint); transform: translateY(-2px); }
+  .btn-white { background: #fff; color: var(--green-dark); }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+  .btn-lg { padding: 16px 34px; font-size: 16.5px; border-radius: 14px; }
+
+  /* ---------- header ---------- */
+  .topbar {
+    background: var(--green-deep); color: #cfe8d9; font-size: 13px;
+    padding: 8px 0; position: relative; z-index: 60;
+  }
+  .topbar .container { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .topbar a { color: #fff; font-weight: 600; }
+  .topbar .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #4ade80; margin-right: 6px; animation: pulse 1.6s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+
+  header.site-header {
+    position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92);
+    backdrop-filter: blur(12px); border-bottom: 1px solid var(--line);
+    transition: box-shadow .25s ease;
+  }
+  header.site-header.scrolled { box-shadow: 0 6px 24px rgba(16,36,26,.08); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 74px; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand img { width: 44px; height: 44px; }
+  .brand .wordmark { font-size: 22px; font-weight: 800; letter-spacing: -.5px; line-height: 1; }
+  .brand .wordmark .s1 { color: var(--green); }
+  .brand .wordmark .s2 { color: var(--navy); }
+  .brand .domain { display: block; font-size: 10.5px; font-weight: 600; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links a { font-size: 14.5px; font-weight: 600; color: #2c4236; position: relative; padding: 4px 0; }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; bottom: -2px; height: 2.5px; width: 0;
+    background: var(--green); border-radius: 2px; transition: width .25s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta { display: flex; align-items: center; gap: 12px; }
+  .nav-phone { display: flex; align-items: center; gap: 8px; font-weight: 800; color: var(--green-dark); font-size: 15px; }
+  .hamburger { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+  .hamburger span { display: block; width: 24px; height: 2.6px; background: var(--ink); margin: 5px 0; border-radius: 3px; transition: .3s; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    background:
+      radial-gradient(900px 480px at 85% -10%, rgba(11,31,143,.14), transparent 60%),
+      radial-gradient(700px 420px at -10% 110%, rgba(22,115,62,.16), transparent 60%),
+      linear-gradient(180deg, #f4faf6 0%, #ffffff 100%);
+    padding: 64px 0 76px;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(22,115,62,.10) 1.2px, transparent 1.2px);
+    background-size: 26px 26px; mask-image: linear-gradient(180deg, #000 30%, transparent 90%);
+    pointer-events: none;
+  }
+  .hero .container { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 52px; align-items: center; }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; border: 1px solid var(--green-tint-2); color: var(--green-dark);
+    font-weight: 700; font-size: 13px; padding: 8px 16px; border-radius: 100px;
+    box-shadow: var(--shadow-sm); margin-bottom: 22px;
+  }
+  .hero-badge .star { color: var(--amber); letter-spacing: 1px; }
+  .hero h1 { font-size: clamp(34px, 4.6vw, 56px); line-height: 1.12; font-weight: 800; letter-spacing: -1.2px; margin-bottom: 18px; }
+  .hero h1 .hl { color: var(--green); position: relative; white-space: nowrap; }
+  .hero h1 .hl::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 12px;
+    background: rgba(245,166,35,.4); z-index: -1; border-radius: 4px;
+  }
+  .hero-sub { font-size: 17px; color: var(--muted); max-width: 520px; margin-bottom: 26px; }
+  .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+  .trust-badges span {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--green-tint);
+    color: var(--green-dark); font-weight: 700; font-size: 13.5px;
+    padding: 9px 15px; border-radius: 100px; border: 1px solid var(--green-tint-2);
+  }
+  .trust-badges svg { width: 16px; height: 16px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-stats { display: flex; gap: 34px; margin-top: 40px; flex-wrap: wrap; }
+  .hero-stats .stat b { display: block; font-size: 24px; font-weight: 800; color: var(--ink); letter-spacing: -.5px; }
+  .hero-stats .stat span { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+  /* ---------- quote form card ---------- */
+  .quote-card {
+    background: #fff; border-radius: 22px; box-shadow: var(--shadow-lg);
+    border: 1px solid var(--line); padding: 30px 28px; position: relative;
+  }
+  .quote-card::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, var(--green), var(--amber));
+    border-radius: 22px 22px 0 0;
+  }
+  .quote-card h2 { font-size: 21px; font-weight: 800; letter-spacing: -.3px; margin-bottom: 4px; }
+  .quote-card .qc-sub { font-size: 13.5px; color: var(--muted); margin-bottom: 18px; }
+  .qc-offer { display: flex; align-items: center; gap: 8px; background: var(--green-tint); border-radius: 10px; padding: 10px 14px; font-size: 13px; font-weight: 700; color: var(--green-dark); margin-bottom: 18px; }
+
+  .vt-seg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+  .vt-seg input { position: absolute; opacity: 0; pointer-events: none; }
+  .vt-seg label {
+    display: flex; flex-direction: column; align-items: center; gap: 5px;
+    border: 1.6px solid var(--line); border-radius: 12px; padding: 10px 4px;
+    font-size: 12.5px; font-weight: 700; color: var(--muted); cursor: pointer;
+    transition: all .16s ease; background: #fff; text-align: center;
+  }
+  .vt-seg label svg { width: 22px; height: 22px; }
+  .vt-seg input:checked + label { border-color: var(--green); background: var(--green-tint); color: var(--green-dark); }
+  .vt-seg label:hover { border-color: var(--green-tint-2); }
+
+  .field { margin-bottom: 13px; position: relative; }
+  .field label { display: block; font-size: 12.5px; font-weight: 700; color: #33473c; margin-bottom: 5px; }
+  .field .inp {
+    width: 100%; padding: 12.5px 14px; border: 1.6px solid var(--line); border-radius: 11px;
+    font-family: var(--font); font-size: 15px; color: var(--ink); background: #fbfdfc;
+    transition: border-color .16s ease, box-shadow .16s ease; outline: none;
+  }
+  .field .inp:focus { border-color: var(--green); box-shadow: 0 0 0 4px rgba(22,115,62,.12); background: #fff; }
+  .field .inp.err { border-color: #e05252; box-shadow: 0 0 0 4px rgba(224,82,82,.10); }
+  .field .err-msg { display: none; color: #d23b3b; font-size: 12px; font-weight: 600; margin-top: 4px; }
+  .field.has-err .err-msg { display: block; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .qc-submit { width: 100%; margin-top: 4px; }
+  .qc-consent { display: flex; align-items: flex-start; gap: 9px; font-size: 12px; color: var(--muted); margin-top: 12px; }
+  .qc-consent input { margin-top: 3px; accent-color: var(--green); width: 15px; height: 15px; }
+  .qc-note { text-align: center; font-size: 12px; color: var(--muted); margin-top: 10px; }
+  .qc-note b { color: var(--green-dark); }
+
+  .toast {
+    position: fixed; bottom: 96px; left: 50%; transform: translateX(-50%) translateY(30px);
+    background: var(--green-deep); color: #fff; padding: 14px 24px; border-radius: 14px;
+    font-weight: 700; font-size: 14.5px; box-shadow: var(--shadow-lg); z-index: 100;
+    opacity: 0; pointer-events: none; transition: all .35s cubic-bezier(.2,.9,.3,1.2);
+    display: flex; align-items: center; gap: 10px; max-width: 92%;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ---------- sections ---------- */
+  section { padding: 78px 0; }
+  .sec-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+  .sec-tag {
+    display: inline-block; background: var(--green-tint); color: var(--green-dark);
+    font-size: 12.5px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase;
+    padding: 7px 16px; border-radius: 100px; margin-bottom: 14px;
+  }
+  .sec-head h2 { font-size: clamp(27px, 3.4vw, 38px); font-weight: 800; letter-spacing: -.8px; line-height: 1.2; margin-bottom: 12px; }
+  .sec-head p { color: var(--muted); font-size: 16px; }
+
+  /* process */
+  .process { background: #fff; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; counter-reset: step; }
+  .step {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 28px 24px; position: relative; transition: transform .22s ease, box-shadow .22s ease;
+    overflow: hidden;
+  }
+  .step:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+  .step .num {
+    width: 46px; height: 46px; border-radius: 14px; background: var(--green);
+    color: #fff; font-weight: 800; font-size: 19px; display: grid; place-items: center;
+    margin-bottom: 18px; box-shadow: 0 6px 14px rgba(22,115,62,.3);
+  }
+  .step:nth-child(2) .num { background: var(--navy); box-shadow: 0 6px 14px rgba(11,31,143,.3); }
+  .step:nth-child(3) .num { background: var(--amber); color: #3a2603; box-shadow: 0 6px 14px rgba(245,166,35,.3); }
+  .step h3 { font-size: 17.5px; font-weight: 800; margin-bottom: 8px; letter-spacing: -.2px; }
+  .step p { font-size: 14px; color: var(--muted); }
+
+  /* why us / comparison */
+  .why { background: linear-gradient(180deg, #f4faf6, #fff); }
+  .cmp-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 980px; margin: 0 auto; }
+  .cmp-card { border-radius: 20px; padding: 30px 28px; border: 1px solid var(--line); background: #fff; }
+  .cmp-card.bad { background: #fdf6f4; border-color: #f3d9d2; }
+  .cmp-card.good { background: #fff; border: 2px solid var(--green); box-shadow: var(--shadow-md); position: relative; }
+  .cmp-card.good::after {
+    content: "RECOMMENDED"; position: absolute; top: -13px; right: 24px;
+    background: var(--green); color: #fff; font-size: 10.5px; font-weight: 800;
+    letter-spacing: 1.2px; padding: 5px 12px; border-radius: 100px;
+  }
+  .cmp-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+  .cmp-card.bad h3 { color: #a3442e; }
+  .cmp-card.good h3 { color: var(--green-dark); }
+  .cmp-card li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; padding: 9px 0; color: #3c4f45; }
+  .cmp-card li + li { border-top: 1px dashed rgba(0,0,0,.07); }
+  .cmp-card li svg { flex: none; width: 18px; height: 18px; margin-top: 3px; }
+  .cmp-card.bad li svg { color: #d9534f; }
+  .cmp-card.good li svg { color: var(--green); }
+
+  /* benefits */
+  .benefits { background: var(--green-deep); color: #e7f5ec; position: relative; overflow: hidden; }
+  .benefits::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,.08) 1.3px, transparent 1.3px);
+    background-size: 28px 28px;
+  }
+  .benefits .sec-head h2 { color: #fff; }
+  .benefits .sec-head p { color: #b8d8c5; }
+  .benefits .sec-tag { background: rgba(255,255,255,.1); color: #9fe6bb; }
+  .ben-grid { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .ben-card {
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+    border-radius: 20px; padding: 30px 26px; backdrop-filter: blur(4px);
+    transition: transform .22s ease, background .22s ease;
+  }
+  .ben-card:hover { transform: translateY(-6px); background: rgba(255,255,255,.1); }
+  .ben-ico {
+    width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center;
+    margin-bottom: 18px; background: rgba(255,255,255,.12);
+  }
+  .ben-ico svg { width: 26px; height: 26px; }
+  .ben-ico.green { background: rgba(74,222,128,.16); }
+  .ben-ico.green svg { color: #4ade80; }
+  .ben-ico.amber { background: rgba(245,166,35,.16); }
+  .ben-ico.amber svg { color: #ffc457; }
+  .ben-ico.navy { background: rgba(122,139,255,.16); }
+  .ben-ico.navy svg { color: #93a3ff; }
+  .ben-card h3 { color: #fff; font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+  .ben-card p { font-size: 14.5px; color: #c4dece; }
+  .ben-card .big { font-size: 22px; font-weight: 800; color: #4ade80; display: block; margin-bottom: 6px; }
+
+  /* certificates */
+  .certs { background: #fff; }
+  .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+  .cert-card {
+    border: 1px solid var(--line); border-radius: 20px; padding: 30px 28px;
+    display: flex; gap: 20px; align-items: flex-start; background: linear-gradient(180deg, #fbfefc, #fff);
+    transition: transform .22s ease, box-shadow .22s ease;
+  }
+  .cert-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+  .cert-doc {
+    flex: none; width: 62px; height: 74px; border-radius: 10px; position: relative;
+    background: linear-gradient(160deg, #fff, #eef7f1); border: 1.6px solid var(--green-tint-2);
+    box-shadow: var(--shadow-sm); display: grid; place-items: center;
+  }
+  .cert-doc::before { content: ""; position: absolute; top: 12px; left: 8px; right: 8px; height: 3px; border-radius: 2px; background: var(--green-tint-2); }
+  .cert-doc::after { content: ""; position: absolute; top: 20px; left: 8px; width: 26px; height: 3px; border-radius: 2px; background: var(--green); }
+  .cert-doc svg { width: 24px; height: 24px; color: var(--green); margin-top: 12px; }
+  .cert-card h3 { font-size: 18.5px; font-weight: 800; margin-bottom: 8px; letter-spacing: -.2px; }
+  .cert-card .cert-tag { display: inline-block; background: var(--green-tint); color: var(--green-dark); font-size: 11.5px; font-weight: 800; padding: 4px 10px; border-radius: 100px; margin-bottom: 10px; }
+  .cert-card p { font-size: 14px; color: var(--muted); }
+  .cert-card ul { margin-top: 12px; }
+  .cert-card ul li { display: flex; gap: 8px; font-size: 13.5px; color: #33473c; padding: 4px 0; }
+  .cert-card ul li svg { width: 15px; height: 15px; color: var(--green); flex: none; margin-top: 3px; }
+
+  /* areas */
+  .areas { background: linear-gradient(180deg, #fff, #f4faf6); }
+  .area-chips { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 820px; margin: 0 auto; }
+  .area-chip {
+    display: inline-flex; align-items: center; gap: 8px; background: #fff;
+    border: 1.5px solid var(--line); border-radius: 100px; padding: 12px 22px;
+    font-weight: 700; font-size: 14.5px; color: #2c4236; transition: all .18s ease;
+  }
+  .area-chip svg { width: 16px; height: 16px; color: var(--green); }
+  .area-chip:hover { border-color: var(--green); color: var(--green-dark); background: var(--green-tint); transform: translateY(-2px); }
+  .areas .more { text-align: center; margin-top: 20px; font-size: 14px; color: var(--muted); }
+  .areas .more b { color: var(--green-dark); }
+
+  /* testimonials */
+  .reviews { background: #fff; }
+  .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .rev-card { border: 1px solid var(--line); border-radius: 20px; padding: 26px 24px; background: #fff; transition: transform .22s ease, box-shadow .22s ease; }
+  .rev-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+  .rev-stars { color: var(--amber); letter-spacing: 2px; font-size: 15px; margin-bottom: 12px; }
+  .rev-card p { font-size: 14.5px; color: #3c4f45; margin-bottom: 18px; }
+  .rev-who { display: flex; align-items: center; gap: 12px; }
+  .rev-ava { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 16px; }
+  .rev-who b { display: block; font-size: 14.5px; }
+  .rev-who span { font-size: 12.5px; color: var(--muted); }
+  .rev-who .verified { margin-left: auto; font-size: 11px; font-weight: 800; color: var(--green-dark); background: var(--green-tint); padding: 4px 10px; border-radius: 100px; }
+
+  /* faq */
+  .faq { background: linear-gradient(180deg, #f4faf6, #fff); }
+  .faq-list { max-width: 780px; margin: 0 auto; }
+  .faq-item { background: #fff; border: 1px solid var(--line); border-radius: 16px; margin-bottom: 12px; overflow: hidden; transition: box-shadow .2s ease; }
+  .faq-item.open { box-shadow: var(--shadow-md); border-color: var(--green-tint-2); }
+  .faq-q {
+    width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    padding: 19px 22px; background: none; border: 0; cursor: pointer;
+    font-family: var(--font); font-size: 15.5px; font-weight: 700; color: var(--ink); text-align: left;
+  }
+  .faq-q .chev { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--green-tint); color: var(--green-dark); display: grid; place-items: center; transition: transform .25s ease; }
+  .faq-item.open .chev { transform: rotate(180deg); background: var(--green); color: #fff; }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+  .faq-a p { padding: 0 22px 20px; font-size: 14.5px; color: var(--muted); }
+
+  /* cta banner */
+  .cta-banner {
+    background: linear-gradient(115deg, var(--green-deep) 0%, var(--green) 55%, #1d8c4c 100%);
+    border-radius: 26px; padding: 52px 48px; color: #fff; position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: ""; position: absolute; right: -70px; top: -70px; width: 260px; height: 260px;
+    border-radius: 50%; background: rgba(255,255,255,.07);
+  }
+  .cta-banner::after {
+    content: ""; position: absolute; right: 60px; bottom: -90px; width: 190px; height: 190px;
+    border-radius: 50%; background: rgba(245,166,35,.16);
+  }
+  .cta-inner { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+  .cta-inner h2 { font-size: clamp(24px, 3vw, 34px); font-weight: 800; letter-spacing: -.6px; margin-bottom: 8px; }
+  .cta-inner p { color: #d3ecdd; font-size: 15.5px; max-width: 520px; }
+  .cta-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* contact */
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 980px; margin: 0 auto; }
+  .contact-card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 26px 24px; text-align: center; transition: transform .2s ease, box-shadow .2s ease; }
+  .contact-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+  .contact-card .c-ico { width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 16px; background: var(--green-tint); color: var(--green); display: grid; place-items: center; }
+  .contact-card .c-ico svg { width: 24px; height: 24px; }
+  .contact-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
+  .contact-card p, .contact-card a { font-size: 14.5px; color: var(--muted); }
+  .contact-card a:hover { color: var(--green-dark); }
+
+  /* footer */
+  footer.site-footer { background: #0a1f14; color: #b9cfc2; padding: 60px 0 0; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 44px; }
+  .footer-grid h4 { color: #fff; font-size: 15px; font-weight: 800; margin-bottom: 16px; }
+  .footer-grid li { margin-bottom: 10px; }
+  .footer-grid a { font-size: 14px; transition: color .15s; }
+  .footer-grid a:hover { color: #4ade80; }
+  .footer-about p { font-size: 14px; margin-top: 14px; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; font-size: 13px; }
+  .footer-bottom .disclaimer { max-width: 640px; font-size: 12px; color: #7f9a8a; }
+
+  /* sticky mobile bar */
+  .mobile-bar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+    background: #fff; border-top: 1px solid var(--line); padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    display: none; gap: 10px; box-shadow: 0 -8px 24px rgba(16,36,26,.10);
+  }
+  .mobile-bar .btn { flex: 1; padding: 13px 10px; font-size: 14px; }
+
+  /* reveal animation — progressive enhancement: sirf JS-on par hide hota hai */
+  html.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .6s ease; }
+  html.js .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    html.js .reveal { opacity: 1; transform: none; transition: none; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1020px) {
+    .hero .container { grid-template-columns: 1fr; gap: 40px; }
+    .hero-sub { max-width: 620px; }
+    .quote-card { max-width: 520px; }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .ben-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 760px) {
+    section { padding: 60px 0; }
+    .nav-links, .nav-phone, .nav-cta .btn { display: none; }
+    .hamburger { display: block; }
+    .nav-links.mobile-open {
+      display: flex; position: absolute; top: 74px; left: 0; right: 0;
+      flex-direction: column; align-items: flex-start; gap: 0;
+      background: #fff; border-bottom: 1px solid var(--line); padding: 8px 5%;
+      box-shadow: 0 18px 30px rgba(16,36,26,.10);
+    }
+    .nav-links.mobile-open a { width: 100%; padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .nav-links.mobile-open a:last-child { border-bottom: 0; }
+    .hero { padding: 44px 0 60px; }
+    .hero-actions .btn { flex: 1; }
+    .steps { grid-template-columns: 1fr; }
+    .cmp-wrap { grid-template-columns: 1fr; }
+    .ben-grid { grid-template-columns: 1fr; }
+    .cert-grid { grid-template-columns: 1fr; }
+    .rev-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .cta-banner { padding: 38px 26px; }
+    .mobile-bar { display: flex; }
+    .toast { bottom: 90px; }
+    .vt-seg { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="container">
+    <span><span class="dot"></span>Free doorstep pickup — running or non-running vehicles</span>
+    <span><span class="dot"></span><span id="topHours">Mon–Sat, 9:00 AM – 6:00 PM</span> &nbsp;|&nbsp; <a id="topPhone" href="#">📞 +91 98765 43210</a></span>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a href="#top" class="brand" aria-label="ScrapNox home">
+      <img src="assets/logo.svg" alt="ScrapNox logo" width="44" height="44" />
+      <span>
+        <span class="wordmark"><span class="s1">Scrap</span><span class="s2">Nox</span></span>
+        <span class="domain">scrapnox.in</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#why-us">Why ScrapNox</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" id="navPhone" href="#"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span id="navPhoneText">+91 98765 43210</span></a>
+      <a href="#quote" class="btn btn-green">Get Free Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div>
+      <span class="hero-badge"><span class="star">★★★★★</span> India's trusted vehicle scrapping partner</span>
+      <h1>Scrap Your Old Vehicle,<br /><span class="hl">Get Instant Payment</span></h1>
+      <p class="hero-sub">
+        Best price for your old car, bike, truck or 3-wheeler — with free doorstep pickup,
+        same-day payment and a 100% legal scrapping process at RVSF-registered facilities.
+      </p>
+      <div class="trust-badges">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>100% Legal Process</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 22V1h12l6 6v15"/><path d="M13 1v6h6"/></svg>Free Pickup</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Best Price</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#quote" class="btn btn-green btn-lg">Get Instant Valuation
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a class="btn btn-outline btn-lg" id="heroCall" href="#">📞 Call Now</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>4,800+</b><span>Vehicles scrapped</span></div>
+        <div class="stat"><b>4.8★</b><span>Google rating</span></div>
+        <div class="stat"><b>90%</b><span>Material recycled</span></div>
+        <div class="stat"><b>24 hrs</b><span>Avg. payout time</span></div>
+      </div>
+    </div>
+
+    <!-- Quote form -->
+    <div class="quote-card" id="quote">
+      <h2>Get an Instant Valuation</h2>
+      <p class="qc-sub">Fill your details — we'll call you back within 15 minutes.</p>
+      <div class="qc-offer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Free valuation • No obligation • 100% confidential
+      </div>
+      <form id="quoteForm" novalidate>
+        <div class="field">
+          <label>Vehicle type</label>
+          <div class="vt-seg" id="vtSeg">
+            <input type="radio" name="vtype" id="vt-car" value="Car" checked /><label for="vt-car"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><rect x="3" y="11" width="18" height="6" rx="2"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg>Car</label>
+            <input type="radio" name="vtype" id="vt-bike" value="Bike" /><label for="vt-bike"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M12 17V7.5L15 4h3"/><path d="M9 9h6l-1.8 2.5H6.8"/></svg>Bike</label>
+            <input type="radio" name="vtype" id="vt-truck" value="Truck" /><label for="vt-truck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h13v10H1z"/><path d="M14 9h4l4 4v3h-8"/><circle cx="6" cy="18.5" r="2"/><circle cx="18" cy="18.5" r="2"/></svg>Truck</label>
+            <input type="radio" name="vtype" id="vt-3w" value="3-Wheeler" /><label for="vt-3w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14l2.5-7a2 2 0 0 1 1.9-1.3h7.2a2 2 0 0 1 1.9 1.3L20 12"/><path d="M4 12h10v4H4z"/><circle cx="6.5" cy="17.5" r="1.6"/><circle cx="15" cy="17.5" r="1.6"/><path d="M14 12h8v2.5"/></svg>3-Wheeler</label>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="fPhone">Phone number</label>
+            <input class="inp" type="tel" id="fPhone" placeholder="+91 XXXXX XXXXX" maxlength="13" />
+            <span class="err-msg">Valid 10-digit number daaliye</span>
+          </div>
+          <div class="field">
+            <label for="fReg">Registration no.</label>
+            <input class="inp" type="text" id="fReg" placeholder="e.g. DL3CAB1234" />
+            <span class="err-msg">Registration number daaliye</span>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="fName">Full name</label>
+            <input class="inp" type="text" id="fName" placeholder="Your name" />
+            <span class="err-msg">Naam daaliye</span>
+          </div>
+          <div class="field">
+            <label for="fPin">Pincode</label>
+            <input class="inp" type="text" id="fPin" placeholder="e.g. 201301" maxlength="6" />
+            <span class="err-msg">6-digit pincode daaliye</span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-amber qc-submit">Check Value →
+        </button>
+        <label class="qc-consent">
+          <input type="checkbox" id="fConsent" checked />
+          <span>I agree that ScrapNox may contact me by call, SMS or WhatsApp about scrapping my vehicle.</span>
+        </label>
+        <p class="qc-note"><b>Instant estimate</b> based on make, model &amp; condition. Final value confirmed at pickup.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process" id="how-it-works">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Simple Process</span>
+      <h2>Scrapping in 4 Easy Steps</h2>
+      <p>From first call to final certificate — we handle everything, so you don't have to.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="num">1</div>
+        <h3>Request a Quote</h3>
+        <p>Call us or fill the form with your vehicle details. We'll give an instant estimate based on make, model, weight and condition.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">2</div>
+        <h3>Free Vehicle Pickup</h3>
+        <p>We schedule a convenient time and collect the vehicle from your doorstep — running or not — at zero cost to you.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">3</div>
+        <h3>Documentation &amp; Scrapping</h3>
+        <p>Our team handles all paperwork including RTO assistance. Your vehicle is dismantled scientifically at an RVSF-registered facility.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">4</div>
+        <h3>Payment &amp; Certificates</h3>
+        <p>Get paid instantly at pickup. Your Certificate of Deposit (CoD) and Certificate of Vehicle Scrapping (CVS) follow right after.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="why" id="why-us">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Why ScrapNox</span>
+      <h2>The Old Way vs The ScrapNox Way</h2>
+      <p>Don't lose money to middlemen or risk illegal disposal. Choose the smart way.</p>
+    </div>
+    <div class="cmp-wrap">
+      <div class="cmp-card bad reveal">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+          The Old Way
+        </h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Kabadiwalas &amp; middlemen who negotiate your price down</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>No legal certificates — vehicle stays registered in your name</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Parts may be resold illegally; you carry the liability</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Pickup charges, hidden deductions, delayed payments</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Improper disposal harms the environment</li>
+        </ul>
+      </div>
+      <div class="cmp-card good reveal">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          The ScrapNox Way
+        </h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Direct deal, no middlemen — you get maximum value</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Valid CoD &amp; CVS certificates issued on VAHAN</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Complete liability discharge — vehicle permanently deregistered</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Free pickup, same-day payment directly to you</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Scientific, eco-friendly dismantling at RVSF</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section class="benefits">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Benefits</span>
+      <h2>Scrapping Pays — In More Ways Than One</h2>
+      <p>Financial, legal and environmental benefits of scrapping your old vehicle the right way.</p>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-card reveal">
+        <div class="ben-ico green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Financial Benefits</h3>
+        <p><span class="big">4–6% of ex-showroom price</span>
+        as scrap value, plus up to <b style="color:#4ade80">25% tax concession</b> on your next vehicle (non-transport) and manufacturer discounts when you scrap via a registered RVSF.</p>
+      </div>
+      <div class="ben-card reveal">
+        <div class="ben-ico amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Legal Protection</h3>
+        <p><span class="big">Zero future liability</span>
+        Your vehicle is digitally deregistered on VAHAN. CoD &amp; CVS certificates are your official proof — no penalties, no misuse of your vehicle in your name.</p>
+      </div>
+      <div class="ben-card reveal">
+        <div class="ben-ico navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+        <h3>Environmental Impact</h3>
+        <p><span class="big">Up to 90% recycled</span>
+        Steel, aluminium and parts are recovered responsibly. Every scrapped vehicle reduces pollution and frees valuable urban space.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATES ============ -->
+<section class="certs" id="certificates">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Certificates</span>
+      <h2>Documents You'll Receive</h2>
+      <p>Two certificates, issued digitally on the VAHAN system, that make your scrapping 100% legal.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <div>
+          <span class="cert-tag">Issued on VAHAN</span>
+          <h3>Certificate of Deposit (CoD)</h3>
+          <p>Issued the day your vehicle is accepted at the facility.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Unlocks tax concessions &amp; manufacturer discounts</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Officially ends your ownership liability</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Tradable document for incentives</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div>
+          <span class="cert-tag">Issued in Form 4</span>
+          <h3>Certificate of Vehicle Scrapping (CVS)</h3>
+          <p>Issued after depollution, dismantling and the chassis cut are complete.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Official proof of permanent removal</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Required for RTO deregistration</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Protects you from future misuse</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AREAS ============ -->
+<section class="areas">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Service Areas</span>
+      <h2>Free Pickup Across Delhi NCR</h2>
+      <p>Doorstep collection available in all major NCR cities and nearby regions.</p>
+    </div>
+    <div class="area-chips reveal">
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Delhi</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Noida</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Greater Noida</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Ghaziabad</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Gurugram</span>
+      <span class="area-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Faridabad</span>
+    </div>
+    <p class="more reveal">Don't see your city? <b>Call us</b> — we likely cover it too.</p>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Testimonials</span>
+      <h2>What Our Customers Say</h2>
+      <p>Real experiences from vehicle owners across Delhi NCR.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p>"Bilkul smooth process tha. Form bhara, same day pickup hui aur payment turant mil gayi. Certificate bhi time pe aa gaya. Highly recommended!"</p>
+        <div class="rev-who">
+          <div class="rev-ava" style="background:#16733e">R</div>
+          <div><b>Ramesh Kumar</b><span>Scrapped: Maruti WagonR, Delhi</span></div>
+          <span class="verified">✓ Verified</span>
+        </div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p>"15 saal purani gaadi ka sahi price mila, aur koi jhanjhat nahi. Team ne saara paperwork handle kiya. Bahut professional service."</p>
+        <div class="rev-who">
+          <div class="rev-ava" style="background:#0b1f8f">A</div>
+          <div><b>Asha Sharma</b><span>Scrapped: Hyundai Santro, Noida</span></div>
+          <span class="verified">✓ Verified</span>
+        </div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p>"Non-running car thi, tow truck free mein aaya. CoD mila aur new car pe discount bhi liya. ScrapNox se better koi nahi."</p>
+        <div class="rev-who">
+          <div class="rev-ava" style="background:#d98e0f">V</div>
+          <div><b>Vijay Mehta</b><span>Scrapped: Honda City, Ghaziabad</span></div>
+          <span class="verified">✓ Verified</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know before scrapping your vehicle.</p>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Kitna paisa milega purani gaadi ka?<span class="chev">▾</span></button>
+        <div class="faq-a"><p>Value depends on make, model, age, weight, metal content and condition. Typically you can expect around 4–6% of your vehicle's ex-showroom price. Call us for a free instant estimate — final value is confirmed after physical inspection at pickup.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Meri gaadi non-running hai — kya pickup hoga?<span class="chev">▾</span></button>
+        <div class="faq-a"><p>Yes! We pick up non-running, accident-damaged and old vehicles free of charge. Our tow trucks handle everything from your doorstep.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Payment kab milegi?<span class="chev">▾</span></button>
+        <div class="faq-a"><p>Payment is made directly to you — typically the same day your vehicle is picked up. The complete process from pickup to certificates usually takes 3–5 business days.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Kaunse areas mein service available hai?<span class="chev">▾</span></button>
+        <div class="faq-a"><p>We currently cover Delhi, Noida, Greater Noida, Ghaziabad, Gurugram, Faridabad and nearby NCR regions. Call us to check your location — we're expanding fast.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Gaadi mere naam pe nahi hai — kya scrap kar sakta hoon?<span class="chev">▾</span></button>
+        <div class="faq-a"><p>Yes, with proper documentation: a notarized authorization letter from the registered owner, the original RC, and identity proofs. Our team will guide you through it.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Loan wali gaadi scrap kar sakte hain?<span class="chev">▾</span></button>
+        <div class="faq-a"><p>Yes, once the loan is closed and you have the bank's NOC. The NOC confirms the financier's name is removed from the RC — after that we can proceed.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">RVSF kya hota hai?<span class="chev">▾</span></button>
+        <div class="faq-a"><p>RVSF stands for Registered Vehicle Scrapping Facility — a facility authorised under the Motor Vehicles (RVSF) Rules, 2021. Only an RVSF can legally issue your CoD and CVS certificates, which protect you from future liability.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Scrapping ke baad gaadi ka kya hota hai?<span class="chev">▾</span></button>
+        <div class="faq-a"><p>Your vehicle is depolluted and dismantled scientifically. Up to 90% of materials — steel, aluminium, plastics — are recycled. The vehicle is permanently deregistered from VAHAN.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="cta-inner">
+        <div>
+          <h2>Ready to scrap your old vehicle?</h2>
+          <p>Get a free instant valuation now. Free pickup, same-day payment and 100% legal certificates — guaranteed.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-amber btn-lg" id="ctaCall" href="#">📞 Call Now</a>
+          <a href="#quote" class="btn btn-white btn-lg">Get Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Contact</span>
+      <h2>Get In Touch</h2>
+      <p>We're available Monday to Saturday, 9:00 AM – 6:00 PM.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Call Us</h3>
+        <a id="contactPhone" href="#" style="font-weight:800;color:var(--green-dark);font-size:17px">+91 98765 43210</a>
+        <p id="contactHours">Mon–Sat, 9:00 AM – 6:00 PM</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+        <h3>Email Us</h3>
+        <a id="contactEmail" href="#">hello@scrapnox.in</a>
+        <p>Replies within 24 hours</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Office</h3>
+        <p id="contactAddress">Sector 80, Noida, Uttar Pradesh 201305</p>
+        <p>RVSF-registered partner network</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="#top" class="brand" aria-label="ScrapNox home">
+          <img src="assets/logo.svg" alt="ScrapNox logo" width="42" height="42" />
+          <span>
+            <span class="wordmark" style="color:#fff"><span class="s1" style="color:#4ade80">Scrap</span><span class="s2" style="color:#93a3ff">Nox</span></span>
+            <span class="domain" style="color:#7f9a8a">scrapnox.in</span>
+          </span>
+        </a>
+        <p>ScrapNox makes vehicle scrapping simple, safe and profitable. We manage end-to-end scrapping through a network of Registered Vehicle Scrapping Facilities (RVSFs) authorised under the Motor Vehicles (RVSF) Rules, 2021.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#why-us">Why ScrapNox</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#quote">Car Scrapping</a></li>
+          <li><a href="#quote">Bike Scrapping</a></li>
+          <li><a href="#quote">Truck Scrapping</a></li>
+          <li><a href="#quote">3-Wheeler Scrapping</a></li>
+          <li><a href="#quote">RTO Assistance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a id="footerPhone" href="#">📞 +91 98765 43210</a></li>
+          <li><a id="footerEmail" href="#">✉ hello@scrapnox.in</a></li>
+          <li><a id="footerWhatsApp" href="#" target="_blank" rel="noopener">💬 WhatsApp Us</a></li>
+          <li><span id="footerAddress">Sector 80, Noida, UP 201305</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ScrapNox. All rights reserved.</span>
+      <p class="disclaimer">Disclaimer: ScrapNox is a private company and is not a government agency. Valuations are indicative and the final value is confirmed after physical inspection. Our services are free to the vehicle owner.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY BAR ============ -->
+<div class="mobile-bar">
+  <a class="btn btn-outline" id="mbCall" href="#">📞 Call Now</a>
+  <a class="btn btn-green" href="#quote">Get Free Quote</a>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast">✅ Thanks! Our team will call you within 15 minutes.</div>
+
+<script>
+(function () {
+  "use strict";
+  var CFG = window.SCRAPNOX_CONFIG || {};
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.documentElement.classList.add("js");
+
+  /* ---------- contact config apply ---------- */
+  function setText(id, text) { var el = document.getElementById(id); if (el) el.textContent = text; }
+  function setHref(id, href) { var el = document.getElementById(id); if (el) el.setAttribute("href", href); }
+  setText("topPhone", "📞 " + CFG.phone);
+  setHref("topPhone", CFG.phoneHref);
+  setText("topHours", CFG.hours);
+  setText("navPhoneText", CFG.phone);
+  setHref("navPhone", CFG.phoneHref);
+  setHref("heroCall", CFG.phoneHref);
+  setHref("ctaCall", CFG.phoneHref);
+  setHref("mbCall", CFG.phoneHref);
+  setText("contactPhone", CFG.phone);
+  setHref("contactPhone", CFG.phoneHref);
+  setText("contactHours", CFG.hours);
+  setHref("contactEmail", "mailto:" + CFG.email);
+  setText("contactEmail", CFG.email);
+  setText("contactAddress", CFG.address);
+  setText("footerPhone", "📞 " + CFG.phone);
+  setHref("footerPhone", CFG.phoneHref);
+  setText("footerEmail", "✉ " + CFG.email);
+  setHref("footerEmail", "mailto:" + CFG.email);
+  setHref("footerWhatsApp", CFG.whatsapp);
+  setText("footerAddress", CFG.address);
+
+  /* ---------- header scroll state ---------- */
+  var header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", function () {
+    header.classList.toggle("scrolled", window.scrollY > 8);
+  }, { passive: true });
+
+  /* ---------- mobile menu ---------- */
+  var burger = document.getElementById("hamburger");
+  var navLinks = document.getElementById("navLinks");
+  burger.addEventListener("click", function () {
+    var open = navLinks.classList.toggle("mobile-open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  navLinks.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") navLinks.classList.remove("mobile-open");
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("visible"); });
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll(".faq-item").forEach(function (item) {
+    var q = item.querySelector(".faq-q");
+    var a = item.querySelector(".faq-a");
+    q.addEventListener("click", function () {
+      var isOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(function (o) {
+        o.classList.remove("open");
+        o.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+        o.querySelector(".faq-a").style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add("open");
+        q.setAttribute("aria-expanded", "true");
+        a.style.maxHeight = a.scrollHeight + "px";
+      }
+    });
+  });
+
+  /* ---------- quote form ---------- */
+  var form = document.getElementById("quoteForm");
+  var toast = document.getElementById("toast");
+
+  function setErr(input, hasErr) {
+    input.classList.toggle("err", hasErr);
+    input.closest(".field").classList.toggle("has-err", hasErr);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var phone = document.getElementById("fPhone");
+    var reg = document.getElementById("fReg");
+    var name = document.getElementById("fName");
+    var pin = document.getElementById("fPin");
+    var ok = true;
+
+    var digits = phone.value.replace(/\D/g, "");
+    if (digits.length < 10) { setErr(phone, true); ok = false; } else { setErr(phone, false); }
+    if (reg.value.trim().length < 6) { setErr(reg, true); ok = false; } else { setErr(reg, false); }
+    if (name.value.trim().length < 2) { setErr(name, true); ok = false; } else { setErr(name, false); }
+    if (!/^\d{6}$/.test(pin.value.trim())) { setErr(pin, true); ok = false; } else { setErr(pin, false); }
+
+    if (!ok) {
+      toast.textContent = "⚠️ Please check the highlighted fields.";
+      toast.classList.add("show");
+      setTimeout(function () { toast.classList.remove("show"); }, 2600);
+      return;
+    }
+
+    var vtype = document.querySelector('input[name="vtype"]:checked');
+    var lead = {
+      vehicleType: vtype ? vtype.value : "Car",
+      phone: digits,
+      reg: reg.value.trim().toUpperCase(),
+      name: name.value.trim(),
+      pincode: pin.value.trim(),
+      consent: document.getElementById("fConsent").checked,
+      at: new Date().toISOString()
+    };
+    try { localStorage.setItem("scrapnox_lead", JSON.stringify(lead)); } catch (err) {}
+
+    toast.textContent = "✅ Thanks " + lead.name.split(" ")[0] + "! Our team will call you within 15 minutes.";
+    toast.classList.add("show");
+    form.reset();
+    document.getElementById("vt-car").checked = true;
+    document.getElementById("fConsent").checked = true;
+    setTimeout(function () { toast.classList.remove("show"); }, 4200);
+  });
+})();
+</script>
+</body>
+</html>
