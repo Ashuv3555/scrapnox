@@ -8,7 +8,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "in.scrapnox.app"
+        applicationId = "app.scrapnox.in"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
