@@ -3,6 +3,7 @@ package com.scrapnox.app
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
@@ -11,6 +12,9 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 class MainActivity : ComponentActivity() {
 
     private lateinit var webView: WebView
@@ -45,6 +49,20 @@ class MainActivity : ComponentActivity() {
             @Suppress("DEPRECATION")
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
                 return handleUrl(url ?: "")
+            }
+        }
+
+        // Android 15+ (targetSdk 36) par edge-to-edge enforced hota hai —
+        // content ko status/navigation bar ke neeche na jaane dein, padding apply karke
+        if (Build.VERSION.SDK_INT >= 35) {
+            WindowCompat.getInsetsController(window, window.decorView).apply {
+                isAppearanceLightStatusBars = true
+                isAppearanceLightNavigationBars = true
+            }
+            ViewCompat.setOnApplyWindowInsetsListener(webView) { v, insets ->
+                val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.setPadding(bars.left, bars.top, bars.right, bars.bottom)
+                WindowInsetsCompat.CONSUMED
             }
         }
 
