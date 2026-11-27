@@ -1,8 +1,8 @@
 Play Store Listing — ScrapNox (Draft)
 
-APP NAME: ScrapNox — Scrap Your Vehicle, Get Instant Cash
+APP NAME: ScrapNox – Scrap Your Vehicle
 SHORT DESCRIPTION (max 80 chars):
-Scrap your car, bike, truck or 3-wheeler. Free pickup, same-day cash, 100% legal.
+Scrap car, bike, truck or 3-wheeler. Free pickup, same-day cash, 100% legal.
 
 FULL DESCRIPTION:
 
@@ -37,7 +37,7 @@ Office: Office No. 72, Harikishan Plaza, CB-201, Ring Road, Naraina, New Delhi 1
 Disclaimer: ScrapNox is a private company and is not a government agency.
 
 CATEGORY: Auto & Vehicles
-TAGS: vehicle scrapping, car scrap, old car sell, car recycling, RVSF, scrap car India
+TAGS: vehicle scrapping, car scrap, old car sell, car recycling, RVSF
 
 PRIVACY NOTE (for Data safety form):
 - App collects: name, phone number, vehicle registration number, pincode (via enquiry form)
